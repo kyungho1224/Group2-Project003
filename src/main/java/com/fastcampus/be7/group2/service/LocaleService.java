@@ -21,7 +21,6 @@ public class LocaleService {
     public Locale locale(String country) {
 
         String address = "http://api.openweathermap.org/geo/1.0/direct?q=" + country + "&limit=5&appid=" + Api.key();
-
         Locale locale;
         int responseCode;
 

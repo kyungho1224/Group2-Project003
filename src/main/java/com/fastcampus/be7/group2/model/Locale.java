@@ -1,7 +1,5 @@
 package com.fastcampus.be7.group2.model;
 
-import java.util.List;
-
 /**
  * Created by KimKyungHo on 2023-12-16(016)
  */
