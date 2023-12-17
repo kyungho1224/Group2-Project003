@@ -7,25 +7,30 @@ import java.util.List;
  */
 public class Locale {
 
-    private String name;
+    private boolean isSucceed = false;
 
-    private List<LocalName> localNamesList;
+    private String name;
 
     private Double lat;
 
     private Double lon;
 
-    private String country;
-
     public Locale() {
     }
 
-    public Locale(String name, List<LocalName> localNamesList, Double lat, Double lon, String country) {
+    public Locale(boolean isSucceed, String name, Double lat, Double lon) {
+        this.isSucceed = isSucceed;
         this.name = name;
-        this.localNamesList = localNamesList;
         this.lat = lat;
         this.lon = lon;
-        this.country = country;
+    }
+
+    public boolean isSucceed() {
+        return isSucceed;
+    }
+
+    public void setSucceed(boolean succeed) {
+        isSucceed = succeed;
     }
 
     public String getName() {
@@ -34,14 +39,6 @@ public class Locale {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<LocalName> getLocalNamesList() {
-        return localNamesList;
-    }
-
-    public void setLocalNamesList(List<LocalName> localNamesList) {
-        this.localNamesList = localNamesList;
     }
 
     public Double getLat() {
@@ -60,22 +57,13 @@ public class Locale {
         this.lon = lon;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     @Override
     public String toString() {
         return "Locale{" +
-                "name='" + name + '\'' +
-                ", localNamesList=" + localNamesList +
+                "isSucceed=" + isSucceed +
+                ", name='" + name + '\'' +
                 ", lat=" + lat +
                 ", lon=" + lon +
-                ", country='" + country + '\'' +
                 '}';
     }
 }
